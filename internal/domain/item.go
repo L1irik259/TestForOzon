@@ -1,20 +1,20 @@
 package domain
 
 type Item struct {
-	itemStaticData  *ItemStaticData
-	itemDynamicData ItemDynamicData
+	ItemStaticData  *ItemStaticData
+	ItemDynamicData ItemDynamicData
 }
 
 func NewItem(staticData *ItemStaticData, dynamicData ItemDynamicData) *Item {
 	return &Item{
-		itemStaticData:  staticData,
-		itemDynamicData: dynamicData,
+		ItemStaticData:  staticData,
+		ItemDynamicData: dynamicData,
 	}
 }
 
 func JoinItem(staticData *ItemStaticData, dynamicData ItemDynamicData) *Item {
 	return &Item{
-		itemStaticData:  staticData,
-		itemDynamicData: dynamicData,
+		ItemStaticData:  staticData,
+		ItemDynamicData: dynamicData,
 	}
 }

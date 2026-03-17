@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package ozon_service;
+
+option go_package = "github.com/L1irik259/TestForOzon/transport/genetation/go/v1;v1";
+
+
+service OzonService {
+  rpc GetItem(ItemRequest) returns (ItemResponse);
+}
+
+message ItemRequest {
+  // Формат: DD-MM-YYYY
+  string date = 1;
+}
+
+message ItemResponse {
+  repeated Item items = 1;
+}
+
+message Item {
+  string id = 1;
+
+  string num_code = 2;
+  string char_code = 3;
+  string name = 4;
+
+  int32 nominal = 5;
+  double value = 6;
+  double vunit_rate = 7;
+
+  string date = 8;
+}
