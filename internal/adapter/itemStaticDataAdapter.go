@@ -11,7 +11,11 @@ type ItemStaticDataAdapter struct {
 }
 
 func NewItemStaticDataAdapter(db *gorm.DB) *ItemStaticDataAdapter {
-	return &ItemStaticDataAdapter{db: db}
+	adapter := &ItemStaticDataAdapter{db: db}
+
+	adapter.db.AutoMigrate(&domain.ItemStaticData{})
+
+	return adapter
 }
 
 func (a *ItemStaticDataAdapter) GetAllItems() ([]*domain.ItemStaticData, error) {

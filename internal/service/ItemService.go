@@ -22,15 +22,16 @@ func NewItemService(
 
 func (s *ItemService) FindItemByIDByDate(
 	id string,
-	date string,
-) (*adapter.ItemAdapter, error) {
+	date time.Time,
+) (*domain.Item, error) {
+
 	d := date.UTC()
 
 	if d.Hour() != 0 ||
 		d.Minute() != 0 ||
 		d.Second() != 0 ||
 		d.Nanosecond() != 0 {
-		return errors.New("Неверный формат данных, нужно указать только нужный день.")
+		return nil, errors.New("Неверный формат данных, нужно указать только нужный день.")
 	}
 
 	return s.itemAdapter.GetItemByIDByDate(id, date)
@@ -86,7 +87,7 @@ func (s *ItemService) FindAllItemsByDate(date time.Time) ([]*domain.Item, error)
 		d.Minute() != 0 ||
 		d.Second() != 0 ||
 		d.Nanosecond() != 0 {
-		return errors.New("Неверный формат данных, нужно указать только нужный день.")
+		return nil, errors.New("Неверный формат данных, нужно указать только нужный день.")
 	}
 
 	return s.itemAdapter.GetAllItemsByDate(date)

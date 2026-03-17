@@ -14,7 +14,18 @@ type Server struct {
 	pb.UnimplementedOzonServiceServer
 }
 
-func (s *Server) GetItem(ctx context.Context, req *pb.ItemRequest) (*pb.ItemResponse, error) {
+func NewServer(
+	itemService service.ItemService,
+) *Server {
+	return &Server{
+		ItemService: itemService,
+	}
+}
+
+func (s *Server) GetItem(
+	ctx context.Context,
+	req *pb.ItemRequest,
+) (*pb.ItemResponse, error) {
 	date, errDate := time.Parse("02/01/2006", req.Date)
 	if errDate != nil {
 		return nil, errDate
