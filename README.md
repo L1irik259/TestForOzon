@@ -4,7 +4,7 @@ gRPC-сервис на Go для получения данных по валют
 
 ## Пример работы
 
-![Demo](assets\gifForOzonTest.gif)
+![Demo](C:\Users\miron\.vscode\TestForOzon\pkg\assets\gifForOzonTest.gif)
 
 ## Структура проекта
 
