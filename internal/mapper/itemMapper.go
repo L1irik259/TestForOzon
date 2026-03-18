@@ -5,6 +5,7 @@ import (
 	pb "github.com/L1irik259/TestForOzon/internal/transport/proto/github.com/L1irik259/TestForOzon/transport/genetation/go/v1"
 )
 
+// Структура для маппинга данных из доменной модели в protobuf модель для передачи по gRPC
 func MapToProto(item domain.Item) *pb.Item {
 	return &pb.Item{
 		Id:        item.ItemStaticData.ID,
