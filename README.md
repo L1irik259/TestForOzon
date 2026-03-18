@@ -2,6 +2,11 @@
 
 gRPC-сервис на Go для получения данных по валютам на указанную дату (статические данные + динамика курса) с хранением в PostgreSQL.
 
+## Микросервис отвечающий за http, который связывается с помощью gRPC 
+
+https://github.com/L1irik259/TestForOzonHTTPService
+
+
 ## Пример работы
 
 ![Demo](https://github.com/L1irik259/TestForOzon/blob/main/pkg/assets/gifForOzonTest.gif)
@@ -82,7 +87,3 @@ task run
 ```powershell
 make run
 ```
-
-## Микросервис отвечающий за http, который связывается с помощью gRPC 
-
-https://github.com/L1irik259/TestForOzonHTTPService
